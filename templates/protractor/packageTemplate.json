@@ -1,0 +1,35 @@
+{
+    "scripts": {
+        "postinstall": "npm run webdriver-manager-update",
+        "test": "protractor ./protractor-conf.js",
+        "webdriver-manager-start": "webdriver-manager start",
+        "webdriver-manager-update": "webdriver-manager update",
+        "lint": "eslint specs/** page_objects/** matchers/** helpers/**"
+    },
+    "devDependencies": {
+        "babel-core": "^6.1.21",
+        "babel-eslint": "^8.2.5",
+        "babel-loader": "^6.2.0",
+        "babel-preset-es2015": "^6.1.18",
+        "eslint": "^4.19.1",
+        "eslint-config-airbnb-base": "^13.0.0",
+        "eslint-plugin-import": "^2.13.0",
+        "lodash": "^4.17.10",
+        "jasmine-json-test-reporter": "^1.0.0-beta",
+        "jasmine-reporters": "^2.2.1",
+        "jasmine-spec-reporter": "^3.2.0",
+        "jasmine-terminal-reporter": "^1.0.3",
+        "mail-notifier": "^0.3.0",
+        "protractor": "5.3.1",
+        "protractor-jasmine2-screenshot-reporter": "^0.3.3",
+        "webdriver-manager": "12.0.6"
+    },
+    "babel": {
+        "presets": [
+            "es2015"
+        ]
+    },
+    "engines": {
+        "node": "8.11.1"
+    }
+}
