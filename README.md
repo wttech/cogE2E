@@ -14,10 +14,9 @@ npm run test --params.env int
 Real life example:
 ```
 npm run test
-    -Pargs="-capabilities.maxInstances=4
     --suite homepage
     --exclude tests/analytics/homepage.js
-    --params.env int"
+    --params.env int
 ```
 
 ### How to write protractor tests
