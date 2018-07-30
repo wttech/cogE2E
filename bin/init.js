@@ -25,11 +25,6 @@ const questions = [
     type: 'confirm',
     name: 'packageAlready',
     message: `Do you have package.json file already?`
-  }, {
-    type: 'confirm',
-    name: 'update',
-    message: `Update package.json file with tool dependencies?`,
-    when: (answers) => answers.packageAlready
   },
   {
     type: 'input',
@@ -65,24 +60,23 @@ inquirer.prompt(questions).then(answers => {
 
   copyAssetsContent(tool, destinationPath);
 
-  if (update) {
-    const projectPackage = packageAlready ?
-      JSON.parse(fs.readFileSync(path.join(paths.outputPath, 'package.json'))) :
-      { "dependencies": {} };
+  const projectPackage = packageAlready ?
+    JSON.parse(fs.readFileSync(path.join(paths.outputPath, 'package.json'))) :
+    { "dependencies": {} };
 
-    if (!projectPackage && packageAlready) {
-      console.error('Could not read package.json in project folder! Check if file exists');
-      return;
-    }
-
-    const toolPackage = JSON.parse(fs.readFileSync(path.join(paths.templates, `${tool}/packageTemplate.json`)))
-
-    if (!toolPackage) {
-      console.error(`Could not read package.json in ${tool} folder!`);
-      return;
-    }
-    updatePackage(projectPackage, toolPackage);
+  if (!projectPackage && packageAlready) {
+    console.error('Could not read package.json in project folder! Check if file exists');
+    return;
   }
+
+  const toolPackage = JSON.parse(fs.readFileSync(path.join(paths.templates, `${tool}/packageTemplate.json`)))
+
+  if (!toolPackage) {
+    console.error(`Could not read package.json in ${tool} folder!`);
+    return;
+  }
+  updatePackage(projectPackage, toolPackage);
+
 
   spinnerInstance.start();
   shellExec("npm install", (err, stdout) => console.log(stdout) || fs.unlink(path.join(paths.outputPath, 'packageTemplate.json')));
