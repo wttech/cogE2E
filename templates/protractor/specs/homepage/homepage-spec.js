@@ -1,8 +1,7 @@
-import LiveHomePage from '../../page_objects/live/homepage/LiveHomePage';
+import HomePage from '../../page_objects/homepage/HomePage';
 
-const EC = protractor.ExpectedConditions;
 describe('Confirm that home page works as expected', () => {
-  const homepage = new LiveHomePage();
+  const homepage = new HomePage();
 
   beforeEach(() => {
     homepage.open();
