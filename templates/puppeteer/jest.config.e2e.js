@@ -1,6 +1,9 @@
 const configCommon = require('./jest.config.common.js');
 
 module.exports = Object.assign(configCommon, {
-    testMatch: ['**/?(*.)(spec.e2e).js?(x)'],
+    testMatch: ['**/specs/**/*.js?(x)', '**/?(*.)(spec.e2e).js?(x)'],
+    transform: {
+        '^.+\\.js$': './jestBabelTransform.js'
+    }
 });
 
