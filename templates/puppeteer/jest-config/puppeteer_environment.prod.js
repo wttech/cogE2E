@@ -1,6 +1,6 @@
 const PuppeteerEnvironment = require('./puppeteer_environment.common');
 
-class LocalEnv extends PuppeteerEnvironment {
+class ProdEnv extends PuppeteerEnvironment {
     constructor(config) {
         super(config);
     }
@@ -11,4 +11,4 @@ class LocalEnv extends PuppeteerEnvironment {
     }
 }
 
-module.exports = LocalEnv;
+module.exports = ProdEnv;
