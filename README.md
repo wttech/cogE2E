@@ -1,4 +1,4 @@
-## Protractor and Gradle setup
+## Protractor setup
 ### Running the tests
 To run test with default configuration:
 ```
