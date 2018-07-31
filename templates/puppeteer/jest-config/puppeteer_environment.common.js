@@ -1,29 +1,26 @@
-const chalk = require('chalk');
 const NodeEnvironment = require('jest-environment-node');
-const puppeteer = require('puppeteer');
-const fs = require('fs');
+const chalk = require('chalk');
 const os = require('os');
 const path = require('path');
-
-const DIR = path.join(os.tmpdir(), 'jest_puppeteer_global_setup');
+const fs = require('fs');
+const puppeteer = require('puppeteer');
 
 class PuppeteerEnvironment extends NodeEnvironment {
     constructor(config) {
         super(config);
+        this.DIR = path.join(os.tmpdir(), 'jest_puppeteer_global_setup');
     }
 
     async setup() {
         console.log(chalk.yellow('Setup Test Environment.'))
 
-        await super.setup();
-
-        const wsEndpoint = fs.readFileSync(path.join(DIR, 'wsEndpoint'), 'utf8');
+        const wsEndpoint = fs.readFileSync(path.join(this.DIR, 'wsEndpoint'), 'utf8');
 
         if (!wsEndpoint) {
             throw new Error('wsEndpoint not found');
         }
 
-        this.global.envTest = 'dev';
+        await super.setup();
 
         this.global.__BROWSER__ = await puppeteer.connect({
             browserWSEndpoint: wsEndpoint,
