@@ -7,12 +7,13 @@ export default class AbstractPage {
     this.pagePath = '';
   }
 
-  async init() {
-    return await puppeteer.launch({
+  async init(options) {
+    const defaultOptions = {
+      args: ['--start-fullscreen'],
       ignoreHTTPSErrors: true,
-      headless: false,
-      args: ['--start-fullscreen']
-    });
+    }
+
+    return await puppeteer.launch(Object.assign(defaultOptions, options));
   }
 
   async open(browser) {

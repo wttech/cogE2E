@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "@babel/preset-env": "^7.0.0-beta.55",
     "@babel/core": "^7.0.0-beta.55",
+    "@babel/preset-env": "^7.0.0-beta.55",
     "babel-core": "^7.0.0-0",
     "babel-jest": "^23.4.2",
     "chalk": "^2.3.0",
@@ -14,6 +14,7 @@
     "test": "jest --config jest-config/jest.config.e2e.local.js",
     "test:dev": "jest --config jest-config/jest.config.e2e.dev.js",
     "test:staging": "jest --config jest-config/jest.config.e2e.staging.js",
-    "test:prod": "jest --config jest-config/jest.config.e2e.prod.js"
+    "test:prod": "jest --config jest-config/jest.config.e2e.prod.js",
+    "lint": "eslint specs/"
   }
 }

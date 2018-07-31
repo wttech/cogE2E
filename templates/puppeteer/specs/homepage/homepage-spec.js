@@ -8,7 +8,9 @@ describe('Confirm that home page works as expected', () => {
   let browser;
 
   beforeEach( async () => {
-    browser = await homepage.init();
+    browser = await homepage.init({
+      headless: false
+    });
   });
 
   test('opens', async () => {
