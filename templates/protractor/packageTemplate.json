@@ -20,7 +20,7 @@
         "jasmine-terminal-reporter": "^1.0.3",
         "protractor": "^5.4.0",
         "protractor-jasmine2-screenshot-reporter": "^0.3.3",
-        "webdriver-manager": "12.0.6"
+        "webdriver-manager": "12.1.0"
     },
     "babel": {
         "presets": [
