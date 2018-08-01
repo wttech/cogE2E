@@ -25,21 +25,15 @@ const questions = [
     type: 'confirm',
     name: 'packageAlready',
     message: `Do you have package.json file already?`
-  },
-  {
-    type: 'input',
-    name: 'destinationPath',
-    message: 'Where should tool files be copied to? (Default is current location)'
   }
 ];
 
-const copyAssetsContent = async (tool, destinationPath) => {
+const copyAssetsContent = async (tool) => {
   const templates = path.join(__dirname, "../templates", tool);
-  const copyPath = destinationPath.length ? path.join(paths.outputPath, `${destinationPath}/`) : paths.outputPath;
 
   try {
     console.log('Copying library assets...');
-    await fs.copy(templates, copyPath);
+    await fs.copy(templates, paths.outputPath);
   } catch (err) {
     console.error(err);
   }
@@ -56,9 +50,9 @@ const updatePackage = async (projectPackage, toolPackage) => {
 }
 
 inquirer.prompt(questions).then(answers => {
-  const {tool, packageAlready, update, destinationPath} = answers;
+  const {tool, packageAlready} = answers;
 
-  copyAssetsContent(tool, destinationPath);
+  copyAssetsContent(tool);
 
   const projectPackage = packageAlready ?
     JSON.parse(fs.readFileSync(path.join(paths.outputPath, 'package.json'))) :
