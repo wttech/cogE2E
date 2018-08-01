@@ -1,6 +1,6 @@
 {
   "name": "@cognifide/e2e",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Cognifide default setup for Puppeteer and Protractor tests",
   "bin": {
     "coge2e": "./bin/init.js"
