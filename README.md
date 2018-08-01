@@ -1,3 +1,19 @@
+# @Cognifide E2E config
+Cognifide default setup for Puppeteer and Protractor tests.
+
+## Installation
+
+```bash
+$ npm install @cognifide/e2e --global
+```
+
+## Usage
+
+```bash
+$ coge2e
+```
+Running this command will init setup and allow to select which configuration should be added.
+
 ## Protractor setup
 ### Running the tests
 To run test with default configuration:
@@ -24,6 +40,7 @@ npm run test
     --suite homepage
     --exclude tests/analytics/homepage.js
     --params.env prod
+
 /* or */
 
 npm run test:prod
@@ -44,3 +61,21 @@ npm run test:prod
 * Read about:
     * [Page Objects](https://www.protractortest.org/#/page-objects)
     * [Styleguide for Protractor](https://github.com/CarmenPopoviciu/protractor-styleguide)
+
+
+## Puppeteer & Jest setup
+### Running the tests
+
+Similar to Protractor config, default configuration comes with 4 default environments:
+- `local` - default environment which is tested when `npm run test` is executed
+- `dev`
+- `staging`
+- `prod`
+
+Tests can be run on specific environment by running scripts like `npm run test:prod`. The only difference is that it's not possible to pass arguments like `--params.env prod` to the script, so trying to run `npm run test --params.env prod` will result in error. The only acceptable arguments are those that are available for [Jest CLI](https://jestjs.io/docs/en/cli) options.
+
+### How to write protractor tests
+* Puppeteer Github page
+    * https://github.com/GoogleChrome/puppeteer
+* Jest
+    * [Getting started](https://jestjs.io/docs/en/getting-started)
