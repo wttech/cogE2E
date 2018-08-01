@@ -1,7 +1,10 @@
 {
     "scripts": {
         "postinstall": "npm run webdriver-manager-update",
-        "test": "protractor ./protractor-conf.js",
+        "test": "protractor ./protractor-conf.js --params.env local",
+        "test:dev": "protractor ./protractor-conf.js --params.env dev",
+        "test:staging": "protractor ./protractor-conf.js --params.env staging",
+        "test:prod": "protractor ./protractor-conf.js --params.env prod",
         "webdriver-manager-start": "webdriver-manager start",
         "webdriver-manager-update": "webdriver-manager update",
         "lint": "eslint specs/** page_objects/** matchers/** helpers/**"

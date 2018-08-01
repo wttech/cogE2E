@@ -3,20 +3,33 @@
 To run test with default configuration:
 ```
 npm run test
-// or
+/* or */
 yarn test
 ```
+There are two ways to run Protractor tests on specific environment: one way is to add another parameter  `--params.env [env_name]`. List of available environment you an find in `/data/env.json`. The second way, easiest, is to run specific npm script: by default, configuration comes with 4 environments:
+- `local` - default environment which is tested when `npm run test` is executed
+- `dev`
+- `staging`
+- `prod`
 
-To run Protractor tests on specific environment just add another parameter  `--params.env [env_name]`. List of available environment you an find in `/data/env.json`.
+In order to run tests on, for example, on `prod` environment simply run `npm run test:prod`
 ```
-npm run test --params.env int
+npm run test --params.env staging
+/* or */
+npm run test:staging
 ```
 Real life example:
 ```
 npm run test
     --suite homepage
     --exclude tests/analytics/homepage.js
-    --params.env int
+    --params.env prod
+/* or */
+
+npm run test:prod
+    --suite homepage
+    --exclude tests/analytics/homepage.js
+
 ```
 
 ### How to write protractor tests
