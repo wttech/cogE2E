@@ -1,17 +1,11 @@
-const { ExpectedConditions: until } = protractor;
+import Timeouts from '../constants/Timeouts';
 
-const TIMEOUTS = {
-    small: 5000,
-    medium: 10000,
-    long: 30000,
-    veryLong: 60000,
-    longest: 120000,
-};
+const { ExpectedConditions: until } = protractor;
 
 const constructErrorMessage = (name, timeout, toBeAction) => `Element "${name}" ${toBeAction} within ${Number(timeout) / 1000}s`;
 
 const wait = (condition, name, toBeAction, timeout = 10000) => {
-    const defaultTimeout = TIMEOUTS[timeout] || timeout;
+    const defaultTimeout = Timeouts[timeout] || timeout;
     const msg = constructErrorMessage(name, defaultTimeout, toBeAction);
     return browser.wait(condition, defaultTimeout, msg);
 }
