@@ -1,5 +1,3 @@
-const configCommon = require('./jest.config.common.js')({
+module.exports = require('./jest.config.common.js')({
     env: 'staging'
 });
-
-module.exports = configCommon;

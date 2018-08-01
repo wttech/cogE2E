@@ -1,5 +1,3 @@
-const configCommon = require('./jest.config.common.js')({
+module.exports = require('./jest.config.common.js')({
     env: 'local'
 });
-
-module.exports = configCommon;
