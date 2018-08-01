@@ -1,6 +1,6 @@
 {
   "name": "@cognifide/e2e",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Cognifide default setup for Puppeteer and Protractor tests",
   "bin": {
     "coge2e": "./bin/init.js"
@@ -8,7 +8,7 @@
   "keywords": [],
   "author": "test",
   "license": "ISC",
-    "dependencies": {
+  "dependencies": {
     "cli-spinner": "^0.2.8",
     "deepmerge": "^2.1.1",
     "fs-extra": "^5.0.0",
