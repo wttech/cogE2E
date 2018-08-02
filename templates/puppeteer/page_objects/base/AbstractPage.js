@@ -1,4 +1,5 @@
 import envData from '../../data/env.json';
+
 const puppeteer = require('puppeteer');
 
 export default class AbstractPage {
@@ -8,18 +9,18 @@ export default class AbstractPage {
   }
 
   async init({
-    args=  ['--start-fullscreen'],
-    ignoreHTTPSErrors= true,
-    headless= true,
-    slowMo= false
+    args = ['--start-fullscreen'],
+    ignoreHTTPSErrors = true,
+    headless = true,
+    slowMo = false,
   }) {
     return await puppeteer.launch({
       args,
       ignoreHTTPSErrors,
       headless,
-      slowMo
+      slowMo,
     });
-}
+  }
 
   async open(browser) {
     const url = this.getFullUrl();
@@ -40,9 +41,5 @@ export default class AbstractPage {
 
   getFullUrl() {
     return this.domain.concat(this.pagePath);
-  }
-
-  getTitle() {
-    return browser.getTitle();
   }
 }

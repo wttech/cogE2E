@@ -8,13 +8,13 @@ const path = require('path');
 const DIR = path.join(os.tmpdir(), 'jest_puppeteer_global_setup');
 
 module.exports = async () => {
-    console.log(chalk.green('Setup Puppeteer'));
+  console.log(chalk.green('Setup Puppeteer'));
 
-    const browser = await puppeteer.launch({});
+  const browser = await puppeteer.launch({});
 
-    global.__BROWSER__ = browser;
+  global.__BROWSER__ = browser;
 
-    mkdirp.sync(DIR);
+  mkdirp.sync(DIR);
 
-    fs.writeFileSync(path.join(DIR, 'wsEndpoint'), browser.wsEndpoint());
+  fs.writeFileSync(path.join(DIR, 'wsEndpoint'), browser.wsEndpoint());
 };

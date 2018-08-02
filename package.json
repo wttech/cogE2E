@@ -5,8 +5,8 @@
   "bin": {
     "coge2e": "./bin/init.js"
   },
-  "keywords": [],
-  "author": "test",
+  "keywords": ["puppeteer", "protractor", "E2E", "testing"],
+  "author": "Cognifide",
   "license": "ISC",
   "dependencies": {
     "cli-spinner": "^0.2.8",

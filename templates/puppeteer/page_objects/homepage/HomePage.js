@@ -1,5 +1,5 @@
 import AbstractPage from '../base/AbstractPage';
-import selectors from './HomePage-po';
+import selectors from './HomePage.po';
 
 export default class HomePage extends AbstractPage {
   constructor() {
