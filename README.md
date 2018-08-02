@@ -10,7 +10,7 @@ $ npm install @cognifide/e2e --global
 ## Usage
 
 ```bash
-$ coge2e
+$ coge2e init
 ```
 Running this command will init setup and allow to select which configuration should be added.
 
@@ -53,15 +53,9 @@ npm run test:prod
 * Get familiar with technology stack:
     * https://www.protractortest.org/
     * https://jasmine.github.io/
-    * ES6 features:
-        * Classes and sub-classes
-        * Promises
-        * Arrow functions
-        * Modules
 * Read about:
     * [Page Objects](https://www.protractortest.org/#/page-objects)
     * [Styleguide for Protractor](https://github.com/CarmenPopoviciu/protractor-styleguide)
-
 
 ## Puppeteer & Jest setup
 ### Running the tests

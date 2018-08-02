@@ -18,7 +18,6 @@ program.on('command:*', () => {
 
 program.parse(process.argv);
 
-
 if (process.argv.length === 2) {
   console.error('Missing command!\nSee --help for a list of available commands.');
   program.outputHelp();
