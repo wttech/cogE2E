@@ -1,0 +1,22 @@
+{
+    "extends": "airbnb-base",
+    "globals": {
+        "describe": true,
+        "beforeAll": true,
+        "beforeEach": true,
+        "afterAll": true,
+        "expect": true,
+        "it": true,
+        "protractor": true,
+        "element": true,
+        "browser": true,
+        "by": true
+    },
+    "rules": {
+        "no-underscore-dangle": 0,
+        "class-methods-use-this": 0,
+        "no-return-await": 0,
+        "no-useless-constructor": 0,
+        "no-console": 0
+    }
+}
