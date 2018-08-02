@@ -1,11 +1,16 @@
 {
   "name": "@cognifide/e2e",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Cognifide default setup for Puppeteer and Protractor tests",
   "bin": {
     "coge2e": "./bin/init.js"
   },
-  "keywords": ["puppeteer", "protractor", "E2E", "testing"],
+  "keywords": [
+    "puppeteer",
+    "protractor",
+    "E2E",
+    "testing"
+  ],
   "author": "Cognifide",
   "license": "ISC",
   "dependencies": {
