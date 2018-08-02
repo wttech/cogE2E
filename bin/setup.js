@@ -7,6 +7,7 @@ const shellExec = require('child_process').exec;
 const Spinner = require('cli-spinner').Spinner;
 const spinnerInstance = new Spinner('Installing dependencies...');
 const questions = require('./questions');
+const chalk = require('chalk');
 
 const paths = {
   outputPath: process.cwd(),
@@ -39,25 +40,37 @@ inquirer.prompt(questions).then(answers => {
 
   copyAssetsContent(tool);
 
+  if (packageAlready) {
+    try {
+      fs.readFileSync(path.join(paths.outputPath, 'package.json'));
+    } catch(err) {
+      console.log(chalk.red('Could not read package.json in project folder! Check if file exists'));
+      return;
+    }
+  }
+
   const projectPackage = packageAlready ?
     JSON.parse(fs.readFileSync(path.join(paths.outputPath, 'package.json'))) :
     { "dependencies": {} };
 
-  if (!projectPackage && packageAlready) {
-    console.error('Could not read package.json in project folder! Check if file exists');
+  try {
+    fs.readFileSync(path.join(paths.templates, `${tool}/packageTemplate.json`))
+  } catch(err) {
+    console.log(chalk.red('Could not read packageTemplate.json file in the ${tool} folder!'));
     return;
   }
 
   const toolPackage = JSON.parse(fs.readFileSync(path.join(paths.templates, `${tool}/packageTemplate.json`)))
 
-  if (!toolPackage) {
-    console.error(`Could not read package.json in ${tool} folder!`);
-    return;
-  }
-
   updatePackage(projectPackage, toolPackage);
 
   spinnerInstance.start();
-  shellExec("npm install", (err, stdout) => console.log(stdout) || fs.unlink(path.join(paths.outputPath, 'packageTemplate.json')));
+  shellExec("npm install", (err, stdout) => {
+    console.log(stdout);
+
+    fs.unlink(path.join(paths.outputPath, 'packageTemplate.json'));
+    console.log(chalk.green('Setup finished!'));
+  });
+
   spinnerInstance.stop();
 });

@@ -5,10 +5,16 @@
   "bin": {
     "coge2e": "./bin/init.js"
   },
-  "keywords": ["puppeteer", "protractor", "E2E", "testing"],
+  "keywords": [
+    "puppeteer",
+    "protractor",
+    "E2E",
+    "testing"
+  ],
   "author": "Cognifide",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^2.4.1",
     "cli-spinner": "^0.2.8",
     "commander": "^2.16.0",
     "deepmerge": "^2.1.1",
