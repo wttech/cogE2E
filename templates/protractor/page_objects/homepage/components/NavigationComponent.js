@@ -1,10 +1,11 @@
 import Wait from '../../../helpers/WaitHelper';
 import Timeouts from '../../../constants/Timeouts';
+import { selectors } from './NavigationComponent.po'
 
 export default class NavigationComponent {
   constructor() {
-    this.menuButton = element(by.css('.component.plain-html.menu-handler .component-content'));
-    this.menu = element(by.css('.component.navigation.navigation-mobile.initialized'));
+    this.menuButton = element(by.css(selectors.menuButton));
+    this.menu = element(by.css(selectors.menu));
   }
 
   async openMenu() {
