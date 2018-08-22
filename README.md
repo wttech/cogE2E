@@ -1,3 +1,5 @@
+![Cognifide logo](http://cognifide.github.io/images/cognifide-logo.png)
+
 # @Cognifide E2E config
 Cognifide default setup for Puppeteer and Protractor tests.
 
@@ -73,3 +75,6 @@ Tests can be run on specific environment by running scripts like `npm run test:p
     * https://github.com/GoogleChrome/puppeteer
 * Jest
     * [Getting started](https://jestjs.io/docs/en/getting-started)
+
+## License
+MIT

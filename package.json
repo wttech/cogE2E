@@ -1,6 +1,6 @@
 {
   "name": "@cognifide/e2e",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Cognifide default setup for Puppeteer and Protractor tests",
   "bin": {
     "coge2e": "./bin/init.js"
@@ -12,7 +12,8 @@
     "testing"
   ],
   "author": "Cognifide",
-  "license": "ISC",
+  "license": "MIT",
+  "homepage": "https://github.com/Cognifide/cogE2E",
   "dependencies": {
     "chalk": "^2.4.1",
     "cli-spinner": "^0.2.8",
@@ -23,6 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@stash.cognifide.com/ui/coge2e.git"
-  }
+    "url": "https://github.com/Cognifide/cogE2E"
+  },
+  "bugs": "https://github.com/Cognifide/cogE2E/issues"
 }
