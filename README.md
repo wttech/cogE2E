@@ -21,8 +21,6 @@ Running this command will init setup and allow to select which configuration sho
 To run test with default configuration:
 ```
 npm run test
-/* or */
-yarn test
 ```
 There are two ways to run Protractor tests on specific environment: one way is to add another parameter  `--params.env [env_name]`. List of available environment you an find in `/data/env.json`. The second way, easiest, is to run specific npm script: by default, configuration comes with 4 environments:
 - `local` - default environment which is tested when `npm run test` is executed
@@ -51,7 +49,7 @@ npm run test:prod
 
 ```
 
-### How to write protractor tests
+### How to write Protractor tests
 * Get familiar with technology stack:
     * https://www.protractortest.org/
     * https://jasmine.github.io/
@@ -70,7 +68,7 @@ Similar to Protractor config, default configuration comes with 4 default environ
 
 Tests can be run on specific environment by running scripts like `npm run test:prod`. The only difference is that it's not possible to pass arguments like `--params.env prod` to the script, so trying to run `npm run test --params.env prod` will result in error. The only acceptable arguments are those that are available for [Jest CLI](https://jestjs.io/docs/en/cli) options.
 
-### How to write protractor tests
+### How to write Puppeteer tests
 * Puppeteer Github page
     * https://github.com/GoogleChrome/puppeteer
 * Jest
