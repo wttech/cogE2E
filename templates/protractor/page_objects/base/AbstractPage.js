@@ -8,7 +8,6 @@ export default class AbstractPage {
 
   async open() {
     const url = this.getFullUrl();
-    browser.driver.manage().window().setSize(1920, 1080);
     return browser.get(url);
   }
 

@@ -4,5 +4,8 @@ export default {
     medium: 2000,
     long: 5000,
     external: 10000
+  },
+  animations: {
+    short: 500
   }
 }

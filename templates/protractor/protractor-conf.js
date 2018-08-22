@@ -38,7 +38,9 @@ exports.config = {
 
   // Spec patterns are relative to the location of the spec file. They may
   // include glob patterns.
-  suites: {},
+  suites: {
+    homePage: 'specs/example/**.js',
+  },
 
   allScriptsTimeout: 1800000,
   // Options to be passed to Jasmine-node.
