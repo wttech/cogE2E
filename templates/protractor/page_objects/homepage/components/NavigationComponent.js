@@ -1,6 +1,6 @@
 import Wait from '../../../helpers/WaitHelper';
 import Timeouts from '../../../constants/Timeouts';
-import { selectors } from './NavigationComponent.po'
+import { selectors } from './NavigationComponentConstants'
 
 export default class NavigationComponent {
   constructor() {
