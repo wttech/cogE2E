@@ -69,8 +69,6 @@ exports.config = {
     env.addReporter(xunitReporter);
 
     browser.manage().timeouts().pageLoadTimeout(45000);
-    //workaround for.window().maximize()). bug on newest chrome
-    browser.driver.manage().window().setSize(1920, 1080);
     browser.ignoreSynchronization = true;
   },
 

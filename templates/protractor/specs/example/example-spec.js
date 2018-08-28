@@ -5,7 +5,7 @@ describe('Confirm that home page works as expected', () => {
   const homepage = new CognifideHomePage();
 
   beforeAll(() => {
-    homepage.open();
+    homepage.openDesktop();
   });
 
   it('should open home page without errors', async () => {
