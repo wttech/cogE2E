@@ -9,6 +9,7 @@ export default class NavigationComponent {
   }
 
   async openMenu() {
+    await Wait.toBeVisible(this.menuButton, 'Navigation Menu', Timeouts.animations.short);
     this.menuButton.click();
     await Wait.toBeVisible(this.menu, 'Navigation Menu', Timeouts.animations.short);
   }
@@ -16,7 +17,7 @@ export default class NavigationComponent {
   async selectSubCategory(linkName) {
     const linkElement = element(by.css(`.field-navigationtitle a[title='${linkName}']`));
     await Wait.toBeVisible(linkElement, `Menu item: ${linkName}`, Timeouts.animations.short);
-    await linkElement.click();
+    linkElement.click();
   }
 
   async navigateToPage(linkName) {
