@@ -38,7 +38,9 @@ exports.config = {
 
   // Spec patterns are relative to the location of the spec file. They may
   // include glob patterns.
-  suites: {},
+  suites: {
+    homePage: 'specs/example/**.js',
+  },
 
   allScriptsTimeout: 1800000,
   // Options to be passed to Jasmine-node.
@@ -67,8 +69,6 @@ exports.config = {
     env.addReporter(xunitReporter);
 
     browser.manage().timeouts().pageLoadTimeout(45000);
-    //workaround for.window().maximize()). bug on newest chrome
-    browser.driver.manage().window().setSize(1920, 1080);
     browser.ignoreSynchronization = true;
   },
 
