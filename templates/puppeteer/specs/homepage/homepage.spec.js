@@ -1,6 +1,6 @@
-import HomePage from '../../page_objects/homepage/HomePage';
+import HomePage from "../../page_objects/homepage/HomePage";
 
-describe('Confirm that home page works as expected', () => {
+describe("Confirm that home page works as expected", () => {
   const homepage = new HomePage();
 
   let page;
@@ -8,13 +8,13 @@ describe('Confirm that home page works as expected', () => {
 
   beforeEach(async () => {
     browser = await homepage.init({
-      headless: false,
+      headless: false
     });
   });
 
-  test('opens', async () => {
+  test("opens", async () => {
     page = await homepage.open(browser);
-    await page.screenshot({ path: 'screenshot.png' });
+    await page.screenshot({ path: "screenshot.png" });
   });
 
   afterAll(async () => {

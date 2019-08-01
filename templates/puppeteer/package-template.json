@@ -2,7 +2,6 @@
   "dependencies": {
     "@babel/core": "7.5.5",
     "@babel/preset-env": "7.5.5",
-
     "babel-jest": "24.8.0",
     "chalk": "2.4.2",
     "eslint": "6.1.0",
@@ -21,5 +20,9 @@
     "test:staging": "jest --config jest-config/jest.config.e2e.staging.js",
     "test:prod": "jest --config jest-config/jest.config.e2e.prod.js",
     "lint": "eslint specs/** jest-config/** page_objects/**"
+  },
+  "engines": {
+    "node": ">=10.9.0",
+    "yarn": ">=1.16.0"
   }
 }
