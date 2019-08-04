@@ -1,24 +1,24 @@
-import envData from '../../data/env.json';
+import envData from "../../data/env.json";
 
-const puppeteer = require('puppeteer');
+const puppeteer = require("puppeteer");
 
 export default class AbstractPage {
   constructor() {
     this.domain = envData.env[global.envTest].URL;
-    this.pagePath = '';
+    this.pagePath = "";
   }
 
   async init({
-    args = ['--start-fullscreen'],
+    args = ["--start-fullscreen"],
     ignoreHTTPSErrors = true,
     headless = true,
-    slowMo = false,
+    slowMo = false
   }) {
     return await puppeteer.launch({
       args,
       ignoreHTTPSErrors,
       headless,
-      slowMo,
+      slowMo
     });
   }
 

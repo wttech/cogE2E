@@ -1,33 +1,47 @@
 {
-    "scripts": {
-      "postinstall": "npm run webdriver-manager-update",
-      "test": "protractor ./protractor-conf.js --params.env local",
-      "test:dev": "protractor ./protractor-conf.js --params.env dev",
-      "test:staging": "protractor ./protractor-conf.js --params.env staging",
-      "test:prod": "protractor ./protractor-conf.js --params.env prod",
-      "webdriver-manager-start": "webdriver-manager start",
-      "webdriver-manager-update": "webdriver-manager update",
-      "lint": "eslint specs/** page_objects/** matchers/** helpers/**"
-    },
-    "dependencies": {
-      "babel-core": "^6.1.21",
-      "babel-eslint": "^8.2.5",
-      "babel-loader": "^6.2.0",
-      "babel-preset-es2015": "^6.1.18",
-      "eslint": "4.19.1",
-      "eslint-config-airbnb-base": "^13.0.0",
-      "eslint-plugin-import": "^2.13.0",
-      "jasmine-json-test-reporter": "^1.0.0-beta",
-      "jasmine-reporters": "^2.2.1",
-      "jasmine-spec-reporter": "^3.2.0",
-      "jasmine-terminal-reporter": "^1.0.3",
-      "protractor": "^5.4.0",
-      "protractor-jasmine2-screenshot-reporter": "^0.3.3",
-      "webdriver-manager": "12.1.0"
-    },
-    "babel": {
-      "presets": [
-        "es2015"
+  "dependencies": {
+    "@babel/core": "7.5.5",
+    "@babel/plugin-transform-runtime": "7.5.5",
+    "@babel/preset-env": "7.5.5",
+    "@babel/register": "7.5.5",
+    "@babel/runtime": "7.5.5",
+    "chalk": "2.4.2",
+    "core-js": "3",
+    "eslint": "6.1.0",
+    "eslint-config-airbnb-base": "13.2.0",
+    "eslint-plugin-import": "2.18.2",
+    "jasmine-json-test-reporter": "1.0.0-beta",
+    "jasmine-reporters": "2.3.2",
+    "jasmine-spec-reporter": "4.2.1",
+    "jasmine-terminal-reporter": "1.0.3",
+    "protractor": "5.4.2",
+    "protractor-jasmine2-screenshot-reporter": "0.5.0",
+    "webdriver-manager": "12.1.5"
+  },
+  "scripts": {
+    "postinstall": "npm run webdriver-manager-update",
+    "test": "protractor ./protractor-conf.js --params.env local",
+    "test:dev": "protractor ./protractor-conf.js --params.env dev",
+    "test:staging": "protractor ./protractor-conf.js --params.env staging",
+    "test:prod": "protractor ./protractor-conf.js --params.env prod",
+    "webdriver-manager-start": "webdriver-manager start",
+    "webdriver-manager-update": "webdriver-manager update",
+    "lint": "eslint specs/** page_objects/** matchers/** helpers/**"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "useBuiltIns": "entry",
+          "corejs": "3"
+        }
       ]
-    }
+    ],
+    "plugins": [["@babel/transform-runtime"]]
+  },
+  "engines": {
+    "node": ">=10.9.0",
+    "yarn": ">=1.16.0"
   }
+}
