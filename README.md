@@ -1,12 +1,10 @@
-![Cognifide logo](https://assets.cognifide.com/github/cognifide-logo.png)
-
-# @Cognifide E2E config
-Cognifide default setup for Puppeteer and Protractor tests.
+# E2E config
+Default setup for Puppeteer and Protractor tests.
 
 ## Installation
 
 ```bash
-$ npm install @cognifide/e2e --global
+$ npm install coge2e --global
 ```
 
 ## Usage
